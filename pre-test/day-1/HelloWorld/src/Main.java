@@ -42,10 +42,12 @@ public class Main {
         }
 
 //        odd even switch case
-        Integer num1 = 16;
-        switch (num1 % 2){
-            case 0: System.out.println(num1 + " is even"); break;
-            default: System.out.println(num1 + " is odd"); break;
+        Integer[] myNums = {10, 75, 76, 47};
+        for (Integer num : myNums) {
+            switch (num % 2) {
+                case 0: System.out.println(num + " is even"); break;
+                default: System.out.println(num + " is odd"); break;
+            }
         }
     }
 
