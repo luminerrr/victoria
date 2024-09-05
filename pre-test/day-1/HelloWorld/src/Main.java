@@ -25,5 +25,19 @@ public class Main {
         System.out.println(myGender);
         System.out.println(myHappy);
         System.out.println(myFavNumber);
+
+//        Circle
+        Circular(10, 15);
+    }
+
+    public static void Circular(Integer radius1, Integer radius2) {
+        System.out.println("Circular Function");
+        final float pi = 3.14f;
+        int radius = radius1;
+        float luas = pi * radius * radius;
+        radius = radius2;
+        float luas2 = pi * radius * radius;
+        System.out.println("Luas pertama " + luas);
+        System.out.println("Luas kedua " + luas2);
     }
 }
