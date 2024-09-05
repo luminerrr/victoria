@@ -1,6 +1,6 @@
 abstract class LibraryItem {
-    private String title;
-    private String itemId;
+    protected String title;
+    public String itemId;
     protected Boolean isCheckedOut;
 
     public LibraryItem(String title, String itemId) {
