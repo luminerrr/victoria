@@ -67,14 +67,23 @@ public class Main {
 //            }
 //            i++;
 //        }
-
+//        Break Loop
 //        for (int i = 1; i < 50; i++) {
 //            if(i % 15 == 0) break;
 //            System.out.print(i);
 //        }
-        for (int i = 0; i < 30; i++) {
-            if(i % 2 == 0) continue;
-            System.out.print(i);
+
+//        Continue Loop
+//        for (int i = 0; i < 30; i++) {
+//            if(i % 2 == 0) continue;
+//            System.out.print(i);
+//        }
+
+        long factorialRes = factorial(8);
+        System.out.println(factorialRes);
+
+        for (int i = 1; i < 20; i++) {
+            System.out.println("The factorial of " + i + " is " + factorial(i));
         }
 
     }
@@ -90,6 +99,15 @@ public class Main {
         }
 
         System.out.println(dayName);
+    }
+
+    public static long factorial(int num) {
+        long result = 1;
+        for (int i = 1; i <= num; i++) {
+            result *= i;
+        }
+
+        return result;
     }
 
 //    public static void Circular(Integer radius1, Integer radius2) {
