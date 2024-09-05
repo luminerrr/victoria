@@ -49,6 +49,14 @@ public class Main {
                 default: System.out.println(num + " is odd"); break;
             }
         }
+
+        for(int i = 1; i <= 50; i++) {
+            if(i % 2 == 0) {
+                System.out.print("even ");
+            } else {
+                System.out.print(i + " ");
+            }
+        }
     }
 
     public static void printDay(int num) {
