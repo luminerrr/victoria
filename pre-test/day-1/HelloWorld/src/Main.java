@@ -29,8 +29,12 @@ public class Main {
 //        Circle
         Circular(10, 15);
 
-        boolean checkOdd = isOdd(20);
+        boolean checkOdd = isOddEven(20);
         System.out.println(checkOdd);
+        Integer[] myNums = {10, 75, 76, 47};
+        for (Integer myNum : myNums) {
+            System.out.println(isOddEven(myNum));
+        }
     }
 
     public static void Circular(Integer radius1, Integer radius2) {
@@ -44,7 +48,11 @@ public class Main {
         System.out.println("Luas kedua " + luas2);
     }
 
-    public static boolean isOdd(int number) {
+    public static boolean isOddEven(int number) {
+        System.out.println("If number " + number + " more than 50 and is even " + (number > 50 && number % 2 == 0));
+        System.out.println("If number " + number + " more than 50 and is odd " + (number > 50 && number % 2 != 0));
+        System.out.println("If number " + number + " less than 50 and is even " + (number < 50 && number % 2 == 0));
+        System.out.println("If number " + number + " less than 50 and is odd " + (number < 50 && number % 2 != 0));
         return number % 2 != 0;
     }
 }
