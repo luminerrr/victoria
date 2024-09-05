@@ -50,12 +50,22 @@ public class Main {
             }
         }
 
-        for(int i = 1; i <= 50; i++) {
+//        for(int i = 1; i <= 50; i++) {
+//            if(i % 2 == 0) {
+//                System.out.print("even ");
+//            } else {
+//                System.out.print(i + " ");
+//            }
+//        }
+
+        int i = 1;
+        while (i <= 50) {
             if(i % 2 == 0) {
                 System.out.print("even ");
             } else {
                 System.out.print(i + " ");
             }
+            i++;
         }
     }
 
