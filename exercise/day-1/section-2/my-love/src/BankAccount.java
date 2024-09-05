@@ -3,9 +3,9 @@ public class BankAccount {
     private String accountHolder;
     private double balance;
 
-    public BankAccount() {
-        accountNumber = "";
-        accountHolder = "";
+    public BankAccount(String accountNumber, String accountHolder) {
+        this.accountNumber = accountNumber;
+        this.accountHolder = accountHolder;
         balance = 0.0;
     }
 

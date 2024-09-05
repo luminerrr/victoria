@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        BankAccount myBank = new BankAccount();
+        BankAccount myBank = new BankAccount("22334455", "Modric");
 
         myBank.deposit(10_000);
         myBank.setAccountHolder("Markus Horison");
