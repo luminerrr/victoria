@@ -15,5 +15,8 @@ public class Main {
         myCat.setSpecies("spring");
         System.out.println(myDog.name);
         System.out.println(myDog.species);
+
+        myDog.sound();
+        myCat.sound();
     }
 }

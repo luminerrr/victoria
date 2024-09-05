@@ -1,6 +1,8 @@
-public class Animal {
+abstract class Animal {
     String name;
     String species;
+
+    abstract void sound();
 
     public Animal() {
         name = "animales";
