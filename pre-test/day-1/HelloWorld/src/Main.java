@@ -40,6 +40,13 @@ public class Main {
         for(Integer dayNum : dayNums) {
             printDay(dayNum);
         }
+
+//        odd even switch case
+        Integer num1 = 16;
+        switch (num1 % 2){
+            case 0: System.out.println(num1 + " is even"); break;
+            default: System.out.println(num1 + " is odd"); break;
+        }
     }
 
     public static void printDay(int num) {
