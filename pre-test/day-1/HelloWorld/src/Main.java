@@ -28,6 +28,9 @@ public class Main {
 
 //        Circle
         Circular(10, 15);
+
+        boolean checkOdd = isOdd(20);
+        System.out.println(checkOdd);
     }
 
     public static void Circular(Integer radius1, Integer radius2) {
@@ -39,5 +42,9 @@ public class Main {
         float luas2 = pi * radius * radius;
         System.out.println("Luas pertama " + luas);
         System.out.println("Luas kedua " + luas2);
+    }
+
+    public static boolean isOdd(int number) {
+        return number % 2 != 0;
     }
 }
