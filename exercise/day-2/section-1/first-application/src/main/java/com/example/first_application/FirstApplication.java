@@ -15,16 +15,52 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.first_application.request.CreateEmployeeRequest;
 import com.example.first_application.request.CreateUserRequest;
+import com.example.first_application.request.PutUserRequest;
 import com.example.first_application.response.CreateEmployeeResponse;
 import com.example.first_application.response.CreateUserResponse;
 import com.example.first_application.response.GetAssetResponse;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 @RestController
 @SpringBootApplication
 
 public class FirstApplication {
+
+  private List<CreateUserResponse> users = new ArrayList<>();
+
+  @PostMapping("/v1/user")
+  public ResponseEntity<List<CreateUserResponse>> createUserV1(@RequestBody CreateUserRequest request) {
+      //TODO: process POST request
+      users.add(CreateUserResponse.builder()
+      .id(request.getId())
+      .name(request.getName())
+      .description(request.getDescription())
+      .type(request.getType())
+      .isAvailable(request.isAvailable())
+      .build()
+      );
+
+
+      return new ResponseEntity<>(users, HttpStatus.OK);
+  }
+
+  @PutMapping("/v1/user/{id}")
+  public ResponseEntity<List<CreateUserResponse>> putUserV1(@PathVariable("id") String id, @RequestBody PutUserRequest request) {
+      //TODO: process PUT request
+      // users.removeIf(user -> user.getId().equals(id));
+      for (CreateUserResponse user : users) {
+        if (user.getId().equals(id)) {
+          user.setName(request.getName());
+        }
+      }
+      
+
+      return new ResponseEntity<>(users, HttpStatus.OK);
+  }
+  
 
   public static void main(String[] args) {
     SpringApplication.run(FirstApplication.class, args);
