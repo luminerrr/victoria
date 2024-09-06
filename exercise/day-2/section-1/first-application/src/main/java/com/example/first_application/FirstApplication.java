@@ -33,7 +33,6 @@ public class FirstApplication {
 
   @PostMapping("/v1/user")
   public ResponseEntity<List<CreateUserResponse>> createUserV1(@RequestBody CreateUserRequest request) {
-      //TODO: process POST request
       users.add(CreateUserResponse.builder()
       .id(request.getId())
       .name(request.getName())
@@ -49,7 +48,6 @@ public class FirstApplication {
 
   @PutMapping("/v1/user/{id}")
   public ResponseEntity<List<CreateUserResponse>> putUserV1(@PathVariable("id") String id, @RequestBody PutUserRequest request) {
-      //TODO: process PUT request
       // users.removeIf(user -> user.getId().equals(id));
       for (CreateUserResponse user : users) {
         if (user.getId().equals(id)) {
@@ -58,7 +56,7 @@ public class FirstApplication {
       }
       
 
-      return new ResponseEntity<>(users, HttpStatus.OK);
+    return new ResponseEntity<>(users, HttpStatus.OK);
   }
   
 
