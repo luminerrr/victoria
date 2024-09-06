@@ -237,22 +237,25 @@ public class FirstApplication {
         .build());
 
     // Validation
-    if (request.getName().isEmpty() ||
-        request.getAge().toString().isEmpty() ||
-        request.getPhone().isEmpty()) {
+    try {
+      if (request.getName().isEmpty() ||
+          request.getAge().toString().isEmpty() ||
+          request.getPhone().isEmpty()) {
+        return new ResponseEntity<>(responses, HttpStatus.OK);
+      }
+      Long newEmployeeId = Long.valueOf(responses.get(responses.size() - 1).getId() + 1);
+      responses.add(CreateEmployeeResponse.builder()
+          .id(newEmployeeId)
+          .name(request.getName())
+          .age(request.getAge())
+          .address(request.getAddress())
+          .phone(request.getPhone())
+          .build());
+      return new ResponseEntity<>(responses, HttpStatus.OK);
+    } catch (Exception e) {
+      // TODO: handle exception
       return new ResponseEntity<>(responses, HttpStatus.OK);
     }
-    Long newEmployeeId = Long.valueOf(responses.get(responses.size() - 1).getId() + 1);
-
-    responses.add(CreateEmployeeResponse.builder()
-        .id(newEmployeeId)
-        .name(request.getName())
-        .age(request.getAge())
-        .address(request.getAddress())
-        .phone(request.getPhone())
-        .build());
-
-    return new ResponseEntity<>(responses, HttpStatus.OK);
   }
 
 }
